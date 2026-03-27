@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Portfólio</title>
+  </head>
+  <body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+      <ul class="topo">
+        <li><a href="#inicio" class="menu-link">Início</a></li>
+        <li><a href="#sobre" class="menu-link">Sobre</a></li>
+        <li><a href="#projetos" class="menu-link">Projetos</a></li>
+        <li><a href="#contato" class="menu-link">Contato</a></li>
+      </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+      <div>
+        <img
+          src="img/Cristina.png"
+          alt="Foto da Cristina"
+          class="foto-perfil"
+        />
+        <h1>Cristina Meirelles</h1>
+        <p class="sub-titulo">
+          Estudante de ADS | Desenvolvimento Web | UX/UI em formação
+        </p>
+      </div>
+    </main>
+
+    <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobre Mim</h2>
+      <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+          Sou estudante de Análise e Desenvolvimento de Sistemas, com formação
+          em Marketing e experiência em Customer Experience, atuando com análise
+          de indicadores, melhoria de processos e foco no cliente.
+          <br />
+          <br />Atualmente, estou desenvolvendo minha base em tecnologia por
+          meio da faculdade e de estudos complementares em programação e
+          experiência do usuário (UX/UI). <br />Tenho como objetivo atuar na
+          área de tecnologia, unindo desenvolvimento, visão de negócio e foco no
+          usuário para construir soluções mais eficientes e intuitivas.
+          <br /><br />Em busca da minha primeira oportunidade na área de
+          tecnologia, com alto comprometimento com aprendizado e evolução
+          contínua.
+        </p>
+      </div>
+    <section id="projetos" class="projetos">
+  <h2 class="projeto-titulo">Meus Projetos</h2>
+
+  <div class="projetos-caixa">
+    <a
+      href="https://github.com/CristinaMeirelles/globo-ux-personalizada"
+      target="_blank"
+      class="projetos-card"
+    >
+      <img
+        src="img/Projeto UX - Globo Personalizada - acessibilidade .png"
+        alt="Projeto UX"
+        class="projeto-imagem"
+      />
+      <div class="caixa-textos-projeto">
+        <h3 class="projeto-nome">Redesign UX - Globo</h3>
+        <p class="projeto-descricao">
+          Projeto desenvolvido com foco em experiência do usuário,
+          acessibilidade, organização da informação e criação de interfaces
+          mais intuitivas.
+        </p>
+      </div>
+    </a>
+
+    <a
+      href="https://cristinameirelles.github.io/gerenciador-tarefas/"
+      target="_blank"
+      class="projetos-card"
+    >
+      <img
+        src="img/Gerenciador de Tarefas .png"
+        alt="Gerenciador de Tarefas Interativo"
+        class="projeto-imagem"
+      />
+      <div class="caixa-textos-projeto">
+        <h3 class="projeto-nome">Gerenciador de Tarefas Interativo</h3>
+        <p class="projeto-descricao">
+          Projeto desenvolvido com HTML, CSS e JavaScript para gerenciamento
+          de tarefas, com cadastro, filtros por status e prioridade, busca e
+          painel de resumo.
+        </p>
+      </div>
+    </a>
+
+    <a
+      href="https://cristinameirelles.github.io/globo-play-acessivel/"
+      target="_blank"
+      class="projetos-card"
+    >
+      <img
+        src="img/Globo Play acessivel.png"
+        alt="Globo Play Acessível"
+        class="projeto-imagem"
+      />
+      <div class="caixa-textos-projeto">
+        <h3 class="projeto-nome">Globo Play Acessível</h3>
+        <p class="projeto-descricao">
+          Interface de streaming com recursos de acessibilidade
+          (contraste, fonte, modo escuro e persistência) desenvolvida com
+          HTML, CSS e JavaScript.
+        </p>
+      </div>
+    </a>
+  </div>
+</section>
+    <section id="contato" class="contato">
+      <h2 class="contato-titulo">Entre em Contato</h2>
+
+      <form
+        class="formulario-contato"
+        id="formulario"
+        onsubmit="enviarWhats(event)"
+      >
+        <div class="grupo-form">
+          <input
+            type="text"
+            placeholder="Nome"
+            class="campo-form"
+            id="nome"
+            required
+          />
+        </div>
+
+        <div class="grupo-form">
+          <textarea
+            class="campo-form"
+            placeholder="Sua mensagem"
+            rows="6"
+            id="mensagem"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="botao-formulario">Enviar WhatsApp</button>
+      </form>
+    </section>
+
+    <script>
+      function enviarWhats(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById("nome").value;
+        const mensagem = document.getElementById("mensagem").value;
+        const telefone = "5521969282873";
+
+        const texto = `Olá, meu nome é ${nome}. ${mensagem}`;
+        const msgFormatada = encodeURIComponent(texto);
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+        window.open(url, "_blank");
+      }
+    </script>
+
+    <footer class="rodape">
+      <p class="rodape-texto">Siga-me nas redes sociais:</p>
+      <p class="rodape-texto">
+        <a
+          href="https://www.linkedin.com/in/cristina-meirelles/"
+          target="_blank"
+        >
+          LinkedIn
+        </a>
+        |
+        <a class="WhatsApp" href="https://wa.me/5521969282873" target="_blank">
+          WhatsApp
+        </a>
+      </p>
+
+      <button id="topo" class="btn-topo">↑</button>
+
+      <script>
+        const btn = document.getElementById("topo");
+
+        window.onscroll = () => {
+          if (window.scrollY > 300) {
+            btn.style.display = "block";
+          } else {
+            btn.style.display = "none";
+          }
+        };
+
+        btn.onclick = () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+      </script>
+
+      <p class="rodape-texto">
+        © 2024 Cristina Meirelles. Todos os direitos reservados.
+      </p>
+    </footer>
+  </body>
+</html>
